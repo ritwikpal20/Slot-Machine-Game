@@ -1,0 +1,28 @@
+.outerWrap{
+    padding: 40px;
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
+    text-align: center;
+    border: paleturquoise 3px solid;
+    background-color: #3B5249;
+    border-radius: 10px;
+}
+h3{
+    color: #53f09f;
+}
+h1{
+    color:#291c23;
+}
+.btnInMenu{
+    display: inline-block;
+    margin: 20px;
+    margin-top: 30px;
+    color:#5D2E46;
+    font-size: 30px;
+    text-decoration: none;
+    border:#8EA4D2 3px solid;
+    background-color: #d3e0db;
+    border-radius: 10px;
+    
+}

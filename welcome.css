@@ -1,0 +1,116 @@
+body{
+    background-color:#e7dfc6;
+    text-align: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+#play{
+    position: relative;
+    top: 100px;
+    color:#5D2E46;
+    font-size: 50px;
+    text-decoration: none;
+    border:#8EA4D2 3px solid;
+    background-color: #3B5249;
+    width: 150px;
+    margin: auto;
+    border-radius: 10px;
+    display: none;
+    animation: playanimation 0.7s infinite;
+}
+
+#play:hover{
+    animation-play-state: paused;
+
+}
+#welcome{
+    color: #519872;
+    font-style: italic;
+    font-weight: bold;
+    height: 100px;
+    font-size: 70px;
+    animation: welcomeanimation 3s 1;
+    animation-fill-mode: forwards;
+    
+
+}
+
+#to{
+    position: relative;
+    top:80px;
+    color : #519872;
+    font-weight: bold;
+    height: 100px;
+    font-size: 50px;
+    animation: toanimation 2s 1;
+    animation-fill-mode: forwards;
+}
+
+#game{
+    color: #519872;
+    font-weight: bold;
+    height: 100px;
+    font-size: 70px;
+    animation: gameanimation 3s 1;
+    animation-fill-mode: forwards;
+}
+
+
+
+@keyframes welcomeanimation{
+    0%{
+        transform: translateY(-500px);
+    }
+    100%{
+        transform: translateY(100px);
+    }
+}
+
+@keyframes toanimation{
+    0%{
+        transform: translateX(-500px);
+    }
+    100%{
+        transform: translateX(150px);
+    }
+}
+
+@keyframes gameanimation{
+    0%{
+        transform: translateY(350px);
+    }
+    100%{
+        transform: translateY(50px);
+    }
+}
+
+@keyframes playanimation{
+    0%{
+
+    }
+    100%{
+        transform: scale(1.2);
+        color: #AD6A6C;
+    }
+}
+
+@media (max-width:800px){
+    #welcome{
+        font-size: 40px;
+    }
+    #to{
+        font-size: 20px;
+    }
+    #game{
+        font-size: 40px;
+    }
+    @keyframes toanimation{
+    0%{
+        transform: translateX(-500px);
+    }
+    100%{
+        transform: translateX(10px);
+    }
+}
+}

@@ -1,0 +1,242 @@
+:root{
+    --speed:5;
+}
+body{
+    background-color:#e7dfc6;
+}
+.machine{
+    
+    background-color:#3B5249;
+    border-radius: 5px;
+    border: dashed 2px #8EA4D2;
+    height: 300px;
+    width: 700px;
+    margin: auto;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    animation: welcomeanimation 1s 1;
+    animation-fill-mode: forwards;
+}
+
+.slot{
+    width: 200px;
+    height: 200px;
+    background-color: floralwhite;
+    border:paleturquoise solid 2px;
+    text-align: center;
+    font-size: 100px;
+    line-height: 250px;
+    overflow: hidden;
+}
+
+.slot > .value{
+    /* animations cannot be applied to inline elements , therefore change the display to inline block */
+    /* display: inline-block;   */
+    /* position: relative; */
+    animation-name: slotspin;
+    animation-duration: calc(1s/var(--speed));
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-play-state: paused; 
+    
+}
+
+
+
+
+.button{
+    font-size: 10px;
+    border-radius: 5px;
+    
+    text-align: center;
+    
+    margin: 20px;
+}
+#btnSpin{
+    position: relative;
+    font-weight: bold;
+    background-color: limegreen;
+    padding: 5px; 
+    height: 50px;
+    line-height: 22px;
+    width: 100px;
+    border:black 2px solid;
+    top: 100px;
+}
+#btnSpin:hover{
+    font-weight: bold;
+    background-color: darkgreen;
+}
+
+
+#btnStop{
+    position: relative;
+    top: 100px;
+    font-weight: bold;
+    background-color: palevioletred;
+    padding: 1px;
+    height: 50px;
+    width: 100px;
+    border:black 2px solid;
+}
+#btnStop:hover{
+    background-color: darkred;
+}
+
+#btnResume{
+    
+    font-weight: bold;
+    background-color: palevioletred;
+    padding: 1px;
+    height: 50px;
+    width: 100px;
+    border:black 2px solid;
+}
+#btnResume:hover{
+    background-color: darkred;
+}
+
+#back{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 10px;
+}
+#back:hover{
+    color: darkred;
+}
+
+.left{
+    position:absolute;
+    top: 25vh;
+}
+.right{
+    position: absolute;
+    top: 25vh;
+    right: 10vh;
+}
+
+@keyframes slotspin{
+    0%{
+        transform: translateY(-15px);
+    }
+    0.1%{
+        transform: translateY(-300px);
+    }
+    100%{
+        transform: translateY(300px);
+    }
+}
+
+@keyframes spinstopping{
+    0%{
+        transform: translateY(-100px);
+    }
+    100%{
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes welcomeanimation{
+    0%{
+        transform: translateY(-500px);
+    }
+    100%{
+        transform: translateY(100px);
+    }
+}
+
+@media (max-width:1200px){
+    body{
+    }
+    h1{
+        font-size: 25px;
+        margin-bottom: 0px;
+        text-align: center;
+    }
+    h2{
+        margin-top: 0px;
+        font-size: 18px;
+        text-align: center;
+    }
+    .left{
+        position: relative;
+        top: -220px;
+        display: block;
+        
+    }
+    .right{
+        position: relative;
+        display: block;
+        top: 20px;
+        left: 5px ;
+    }
+    .machine{
+        width: 450px;
+        height: 170px;
+    }
+    .slot{
+        width: 120px;
+        height: 120px;
+        font-size: 80px;
+    }
+    
+    @keyframes slotspin{
+        0%{
+            transform: translateY(-60px);
+        }
+        0.1%{
+            transform: translateY(-300px);
+        }
+        100%{
+            transform: translateY(300px);
+        }
+    }
+
+    @keyframes spinstopping{
+        0%{
+            transform: translateY(-120px);
+        }
+        100%{
+            transform: translateY(-60px);
+        }
+    }
+}
+@media (max-width:600px){
+    .machine{
+        width: 300px;
+        height: 100px;
+    }
+    .slot{
+        width: 70px;
+        height: 60px;
+        font-size: 50px;
+    }
+    #back{
+        margin: 30px;
+    }
+    @keyframes slotspin{
+        0%{
+            transform: translateY(-95px);
+        }
+        0.1%{
+            transform: translateY(-300px);
+        }
+        100%{
+            transform: translateY(300px);
+        }
+    }
+    @keyframes spinstopping{
+        0%{
+            transform: translateY(-120px);
+        }
+        100%{
+            transform: translateY(-95px);
+        }
+    }
+}
+
+
