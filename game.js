@@ -1,18 +1,19 @@
-let value1 = document.getElementById('value1')
-let value2 = document.getElementById('value2')
-let value3 = document.getElementById('value3')
 let btnSpin = document.getElementById('btnSpin')
 let btnStop = document.getElementById('btnStop')
+
+
 let value = document.getElementsByClassName('value')
+let values = [['😀'], ['😋', '😏', '🥱'], ['🤔', '🤨', '🙂'], ['🤩'], ['😀', '🤩'], ['🙄'], ['😀', '🤩', '🙄'], ['😎'], ['😁', '😂', '🤣'], ['😑', '😐', '😶'], ['😍'], ['😎', '😍'], ['😘'], ['😫', '😣', '😮'], ['🥰'], ['😉', '😚', '😌'], ['😴'], ['😍', '😊'], ['🤔', '🤨', '🙂'], ['😫'], ['😴', '🥰', '😘'], ['😪'], ['🤔', '🤨', '🙂'], ['🤐'], ['😫', '😪', '🤐'], ['😫', '🤩', '🙄']]
 
-let values = [['😀'], ['😋', '😏', '🥱'], ['🤔', '🤨', '🙂'], ['🤩'], ['😀', '🤩'], ['🙄'], ['😀', '🤩', '🙄'], ['😎'], ['😁', '😂', '🤣'], ['😍'], ['😎', '😍'], ['😘'], ['🥰'], ['😉', '😚', '😌'], ['😴'], ['🤔', '🤨', '🙂'], ['😫'], ['😴', '🥰', '😘'], ['😪'], ['🤔', '🤨', '🙂'], ['🤐'], ['😫', '😪', '🤐'], ['😫', '🤩', '🙄']]
 
+//Retrieving the speed of slot from local storage that was saved  from previous webpage and assigning it to 
+//css variable "speed"
+//the default speed of slot is 2 and it's already set in game.css
 let speedSlot = parseInt(localStorage.getItem("speedSlot"))
-let randomValueIntervalId
 if (!isNaN(speedSlot))
     document.documentElement.style.setProperty('--speed', speedSlot)
 else
-    speedSlot = 5
+    speedSlot = 2
 
 function getRandomValue(emojiSet) {
     return emojiSet[Math.floor(Math.random() * parseInt(emojiSet.length))]
@@ -52,6 +53,7 @@ chances.innerText = `Chances left: ${chance}`
 
 
 //button spin function
+let randomValueIntervalId
 btnStop.disabled = true
 btnSpin.onclick = function () {
 
@@ -89,6 +91,8 @@ btnStop.onclick = function () {
             if (value1.innerText == value2.innerText && value2.innerText == value3.innerText) {
                 scoreCounter++
                 score.innerText = `Your Score: ${scoreCounter}`
+
+                //This if statement had be written inside setTimeout , other score.innerText does not changes on winning because the browser will do performance option by reading all the lines and then displaying the last line . If we do set time out we are giving browser the time to render on screen.
                 setTimeout(() => {
                     if (scoreCounter == win) {
                         alert("Congrats, You Won the match !!! Play Again")

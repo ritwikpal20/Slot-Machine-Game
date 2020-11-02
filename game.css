@@ -1,5 +1,5 @@
 :root{
-    --speed:5;
+    --speed:2;
 }
 body{
     background-color:#e7dfc6;
@@ -32,9 +32,6 @@ body{
 }
 
 .slot > .value{
-    /* animations cannot be applied to inline elements , therefore change the display to inline block */
-    /* display: inline-block;   */
-    /* position: relative; */
     animation-name: slotspin;
     animation-duration: calc(1s/var(--speed));
     animation-iteration-count: infinite;
@@ -150,8 +147,6 @@ body{
 }
 
 @media (max-width:1200px){
-    body{
-    }
     h1{
         font-size: 25px;
         margin-bottom: 0px;
