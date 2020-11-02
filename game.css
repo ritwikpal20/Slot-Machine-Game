@@ -5,14 +5,16 @@ body{
     background-color:#e7dfc6;
 }
 .machine{
-    
+    position: relative;;
     background-color:#3B5249;
     border-radius: 5px;
     border: dashed 2px #8EA4D2;
     height: 300px;
     width: 700px;
     margin: auto;
-    margin-top: 10px;
+    margin-top: 0px;
+    top: -100px;
+    
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -33,7 +35,7 @@ body{
 
 .slot > .value{
     animation-name: slotspin;
-    animation-duration: calc(1s/var(--speed));
+    animation-duration: calc((1s/var(--speed))*2);
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     animation-play-state: paused; 
@@ -44,6 +46,8 @@ body{
 
 
 .button{
+    position: relative;
+    top: -100px;
     font-size: 10px;
     border-radius: 5px;
     
@@ -108,12 +112,21 @@ body{
 
 .left{
     position:absolute;
-    top: 25vh;
+    top: 200px;
+    left:1vh
 }
 .right{
     position: absolute;
-    top: 25vh;
+    top: 200px;
     right: 10vh;
+}
+
+.divStats{
+    color: #5D2E46;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+
 }
 
 @keyframes slotspin{
@@ -146,7 +159,7 @@ body{
     }
 }
 
-@media (max-width:1200px){
+@media (max-width:1240px){
     h1{
         font-size: 25px;
         margin-bottom: 0px;
@@ -157,65 +170,47 @@ body{
         font-size: 18px;
         text-align: center;
     }
-    .left{
+   
+    .machine{
+        width: 650px;
+        height: 230px;
+    }
+    
+    .divStats{
+        margin: 10px;
+    }
+
+}
+@media (max-width:1100px){
+    
+     .left{
         position: relative;
-        top: -220px;
+        top: 5px;
         display: block;
         
     }
     .right{
         position: relative;
         display: block;
-        top: 20px;
+        top: 15px;
         left: 5px ;
     }
-    .machine{
-        width: 450px;
-        height: 170px;
-    }
-    .slot{
-        width: 120px;
-        height: 120px;
-        font-size: 80px;
-    }
     
-    @keyframes slotspin{
-        0%{
-            transform: translateY(-60px);
-        }
-        0.1%{
-            transform: translateY(-300px);
-        }
-        100%{
-            transform: translateY(300px);
-        }
-    }
-
-    @keyframes spinstopping{
-        0%{
-            transform: translateY(-120px);
-        }
-        100%{
-            transform: translateY(-60px);
-        }
-    }
 }
-@media (max-width:600px){
+
+@media (max-width:700px){
     .machine{
-        width: 300px;
-        height: 100px;
+        width: 350px;
+        height: 180px;
     }
     .slot{
-        width: 70px;
-        height: 60px;
-        font-size: 50px;
-    }
-    #back{
-        margin: 30px;
+        width: 100px;
+        height: 130px;
+        font-size:80px ;
     }
     @keyframes slotspin{
         0%{
-            transform: translateY(-95px);
+            transform: translateY(-60px);
         }
         0.1%{
             transform: translateY(-300px);
@@ -229,9 +224,10 @@ body{
             transform: translateY(-120px);
         }
         100%{
-            transform: translateY(-95px);
+            transform: translateY(-60px);
         }
     }
 }
+
 
 

@@ -21,9 +21,9 @@ function getRandomValue(emojiSet) {
 
 //Setting Difficulty Level
 let difficultyLevel
-if (speedSlot < 2)
+if (speedSlot < 4)
     difficultyLevel = 'Easy'
-else if (speedSlot >= 2 && speedSlot <= 5)
+else if (speedSlot >= 4 && speedSlot <= 7)
     difficultyLevel = 'Medium'
 else
     difficultyLevel = 'Hard'
@@ -55,10 +55,15 @@ chances.innerText = `Chances left: ${chance}`
 //button spin function
 let randomValueIntervalId
 btnStop.disabled = true
+
+let h1Stats = document.getElementById('h1Stats')
 btnSpin.onclick = function () {
 
-    let emojichangetime = (1 / speedSlot) * (1000)
+    let emojichangetime = (2 / speedSlot) * (1000)
+    h1Stats.innerText = "Spinning the wheel"
+    h1Stats.style.color = "#2b2327"
     randomValueIntervalId = setInterval(() => {
+
         let selectEmojiSet = Math.floor(Math.random() * values.length)
         let emojiSet = values[selectEmojiSet]
         value1.innerText = getRandomValue(emojiSet)
@@ -66,7 +71,12 @@ btnSpin.onclick = function () {
         value3.innerText = getRandomValue(emojiSet)
     }, emojichangetime)
 
-    btnStop.disabled = false
+    setTimeout(() => {
+        h1Stats.innerText = "You can now stop the wheel"
+        h1Stats.style.color = "#8d0047"
+        btnStop.disabled = false
+    }, 2000)
+
 
     value[0].style.animationPlayState = 'running'
     value[1].style.animationPlayState = 'running'
@@ -80,6 +90,8 @@ btnSpin.onclick = function () {
 }
 
 btnStop.onclick = function () {
+    h1Stats.innerText = "Wheel Stopped"
+    h1Stats.style.color = "#dd006f"
     if (randomValueIntervalId) {
         clearInterval(randomValueIntervalId)
         value[0].style.animation = 'spinstopping 2s 1'
@@ -91,7 +103,8 @@ btnStop.onclick = function () {
             if (value1.innerText == value2.innerText && value2.innerText == value3.innerText) {
                 scoreCounter++
                 score.innerText = `Your Score: ${scoreCounter}`
-
+                h1Stats.innerText = "1 point added to Score"
+                h1Stats.style.color = "#814865"
                 //This if statement had be written inside setTimeout , other score.innerText does not changes on winning because the browser will do performance option by reading all the lines and then displaying the last line . If we do set time out we are giving browser the time to render on screen.
                 setTimeout(() => {
                     if (scoreCounter == win) {
@@ -99,6 +112,10 @@ btnStop.onclick = function () {
                         location.reload()
                     }
                 }, 60)
+            }
+            else {
+                h1Stats.innerText = "0 point added to Score"
+                h1Stats.style.color = "#814865"
             }
             if (chance == 0) {
 
@@ -108,11 +125,14 @@ btnStop.onclick = function () {
                     alert("You Lose!!! Better Luck Next Time")
                 location.reload()
             }
-
-            btnSpin.innerText = 'Spin'
-            btnSpin.disabled = false
+            setTimeout(() => {
+                h1Stats.innerText = "Spin the Wheel"
+                h1Stats.style.color = "#5D2E46"
+                btnSpin.innerText = 'Spin'
+                btnSpin.disabled = false
+            }, 3000)
             let speedOld
-            speedOld = 1 / speedSlot;
+            speedOld = (1 / speedSlot) * 2;
             value[0].style.animation = `slotspin ${speedOld}s infinite`
             value[1].style.animation = `slotspin ${speedOld}s infinite`
             value[2].style.animation = `slotspin ${speedOld}s infinite`
