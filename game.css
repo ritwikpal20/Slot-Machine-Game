@@ -2,11 +2,12 @@
     --speed:2;
 }
 body{
-    background-color:#e7dfc6;
+    background: url("https://pixabay.com/get/54e9d2474c56ae14f6d1867dda353678153bd9e75658724f_1920.jpg");
+    background-size: cover;
 }
 .machine{
     position: relative;;
-    background-color:#3B5249;
+    background-color:#303a36cb;
     border-radius: 5px;
     border: dashed 2px #8EA4D2;
     height: 300px;
@@ -29,6 +30,7 @@ body{
     border:paleturquoise solid 2px;
     text-align: center;
     font-size: 100px;
+    border-radius: 1rem;
     line-height: 250px;
     overflow: hidden;
 }
@@ -61,12 +63,14 @@ body{
     background-color: limegreen;
     padding: 5px; 
     height: 50px;
+    opacity: 1;
     line-height: 22px;
     width: 100px;
     border:black 2px solid;
     top: 100px;
 }
 #btnSpin:hover{
+    opacity: 1;
     font-weight: bold;
     background-color: darkgreen;
 }
@@ -76,13 +80,15 @@ body{
     position: relative;
     top: 100px;
     font-weight: bold;
-    background-color: palevioletred;
+    opacity: 1;
+    background-color: rgb(255, 49, 117);
     padding: 1px;
     height: 50px;
     width: 100px;
     border:black 2px solid;
 }
 #btnStop:hover{
+    opacity: 1;
     background-color: darkred;
 }
 
@@ -112,17 +118,22 @@ body{
 
 .left{
     position:absolute;
+    color: #ffe7f3;
+    text-shadow: black 2px 2px 3px;
     top: 200px;
     left:1vh
 }
 .right{
     position: absolute;
+    color: #ffe7f3;
+    text-shadow: black 2px 2px 3px;
     top: 200px;
     right: 10vh;
 }
 
 .divStats{
-    color: #5D2E46;
+    color: #ffe7f3;
+    text-shadow: black 2px 2px 3px;
     text-align: center;
     margin: 0;
     padding: 0;

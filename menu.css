@@ -1,5 +1,7 @@
 body{
-    background-color:#e7dfc6;
+    background: url("https://pixabay.com/get/54e9d2474c56ae14f6d1867dda353678153bd9e75658724f_1920.jpg");
+    text-align: center;
+    background-size: cover;
 }
 #inpSpeed{
     font-size: 20px;
@@ -9,13 +11,12 @@ body{
     margin-bottom: 30px;
 }
 #menu{
-    padding: 40px;
+    padding: 3rem;
     margin: auto;
-    width: 500px;
-    height: 320px;
+    width: fit-content;
     text-align: center;
     border: paleturquoise 3px solid;
-    background-color: #3B5249;
+    background-color: #00000093;
     border-radius: 10px;
     animation: welcomeanimation 1s 1;
     animation-fill-mode: forwards;

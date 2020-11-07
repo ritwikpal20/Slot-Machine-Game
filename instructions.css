@@ -1,3 +1,8 @@
+body {
+    background: url("https://pixabay.com/get/54e9d2474c56ae14f6d1867dda353678153bd9e75658724f_1920.jpg");
+    text-align: center;
+    background-size: cover;
+}
 .outerWrap{
     padding: 40px;
     margin: auto;
@@ -5,14 +10,14 @@
     height: fit-content;
     text-align: center;
     border: paleturquoise 3px solid;
-    background-color: #3B5249;
+    background-color: #0036226b;
     border-radius: 10px;
 }
 h3{
-    color: #53f09f;
+    color: #74ecae;
 }
 h1{
-    color:#291c23;
+    color:#ffffff;
 }
 .btnInMenu{
     display: inline-block;
