@@ -61,7 +61,6 @@ btnSpin.onclick = function () {
 
     let emojichangetime = (2 / speedSlot) * (1000)
     h1Stats.innerText = "Spinning the wheel"
-    h1Stats.style.color = "#2b2327"
     randomValueIntervalId = setInterval(() => {
 
         let selectEmojiSet = Math.floor(Math.random() * values.length)
@@ -73,7 +72,6 @@ btnSpin.onclick = function () {
 
     setTimeout(() => {
         h1Stats.innerText = "You can now stop the wheel"
-        h1Stats.style.color = "#8d0047"
         btnStop.disabled = false
     }, 2000)
 
@@ -91,12 +89,15 @@ btnSpin.onclick = function () {
 
 btnStop.onclick = function () {
     h1Stats.innerText = "Wheel Stopped"
-    h1Stats.style.color = "#dd006f"
     if (randomValueIntervalId) {
         clearInterval(randomValueIntervalId)
-        value[0].style.animation = 'spinstopping 2s 1'
-        value[1].style.animation = 'spinstopping 2s 1'
-        value[2].style.animation = 'spinstopping 2s 1'
+        value[0].style.animation = 'spinstopping 2s 1';
+        setTimeout(function(){
+            value[1].style.animation = 'spinstopping 2s 1';
+        },100);
+        setTimeout(function(){
+            value[2].style.animation = 'spinstopping 2s 1';
+        },200);
         btnStop.disabled = true
         setTimeout(() => {
 

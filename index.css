@@ -1,22 +1,41 @@
 body{
-    background-color:#e7dfc6;
+    background: url("https://pixabay.com/get/54e9d2474c56ae14f6d1867dda353678153bd9e75658724f_1920.jpg");
     text-align: center;
+    background-size: cover;
     overflow-x: hidden;
     overflow-y: hidden;
 }
 
+.outerwrap{
+    height: 100%;
+    width: 100%;
+    margin-top: 5rem;
+    text-align: center;
+}
+
+.innerwrap{
+    display: inline-block;
+    width: fit-content;
+    padding: 3rem;
+    border-radius: 1rem;
+    background-color: rgba(0, 0, 0, 0.377);
+    animation: innerwrap-glow 1s ease-in forwards;
+}
+
 #play{
-    position: relative;
+    /* position: relative;
     top: 100px;
     color:#5D2E46;
     font-size: 50px;
     text-decoration: none;
     border:#8EA4D2 3px solid;
-    background-color: #3B5249;
+    background-color: #3B5249;*/
+    display: inline-block;
     width: 150px;
     margin: auto;
+    /*
+    text-align: center; */
     border-radius: 10px;
-    display: none;
     animation: playanimation 0.7s infinite;
 }
 
@@ -25,63 +44,89 @@ body{
 
 }
 #welcome{
-    color: #519872;
     font-style: italic;
     font-weight: bold;
-    height: 100px;
     font-size: 70px;
-    animation: welcomeanimation 3s 1;
+    transform: translateY(-500px);
+    animation: welcomeanimation 1.5s ease-in;
+    animation-delay: 0.7s;
     animation-fill-mode: forwards;
-    
-
 }
 
 #to{
     position: relative;
-    top:80px;
-    color : #519872;
     font-weight: bold;
-    height: 100px;
     font-size: 50px;
-    animation: toanimation 2s 1;
+    animation: toanimation 2s ease-in;
     animation-fill-mode: forwards;
 }
 
 #game{
-    color: #519872;
     font-weight: bold;
-    height: 100px;
     font-size: 70px;
-    animation: gameanimation 3s 1;
+    animation: gameanimation 1.5s ease-in;
     animation-fill-mode: forwards;
+    margin-bottom: 1rem;
 }
 
+.glow-text{
+    color: #fdff7d;
+    text-shadow: white 0px 0px 2rem;
+    animation: glow 1s infinite ease-in-out;
+}
+
+@keyframes glow{
+    0%{
+        text-shadow: rgb(255, 130, 130) 0px 0px 3rem;
+    }
+    50%{
+        text-shadow: white 0px 0px 2rem;
+    }
+    100%{
+        text-shadow: rgb(187, 255, 0) 0px 0px 3rem;
+    }
+}
+
+@keyframes innerwrap-glow{
+    from{
+        box-shadow: none;
+    }
+    to{
+        box-shadow: #fdff7d 0px 0px 3rem;
+    }
+}
 
 
 @keyframes welcomeanimation{
     0%{
+        opacity: 0.3;
         transform: translateY(-500px);
     }
     100%{
-        transform: translateY(100px);
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
 @keyframes toanimation{
     0%{
+        opacity: 0.5;
         transform: translateX(-500px);
     }
     100%{
-        transform: translateX(150px);
+        transform: translateX(0);
+        opacity: 1;
     }
 }
 
 @keyframes gameanimation{
     0%{
+        opacity: 0.5;
         transform: translateY(350px);
     }
     100%{
-        transform: translateY(50px);
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -91,7 +136,7 @@ body{
     }
     100%{
         transform: scale(1.2);
-        color: #AD6A6C;
+        color: #c2e400;
     }
 }
 
