@@ -2,16 +2,20 @@
     --speed:2;
 }
 body{
-    background: url("https://pixabay.com/get/54e9d2474c56ae14f6d1867dda353678153bd9e75658724f_1920.jpg");
+    background: url("./alexander-kaunas-kTCZuDtYgzc-unsplash.jpg");
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: fit-content;
+    
 }
 .machine{
     position: relative;;
     background-color:#303a36cb;
     border-radius: 5px;
     border: dashed 2px #8EA4D2;
-    height: 300px;
-    width: 700px;
+    height: 250px;
+    width: 650px;
     margin: auto;
     margin-top: 0px;
     top: -100px;
@@ -54,7 +58,7 @@ body{
     border-radius: 5px;
     
     text-align: center;
-    
+    padding: 5px;
     margin: 20px;
 }
 #btnSpin{
@@ -170,7 +174,7 @@ body{
     }
 }
 
-@media (max-width:1240px){
+@media (max-width:1250px){
     h1{
         font-size: 25px;
         margin-bottom: 0px;
@@ -190,20 +194,20 @@ body{
     .divStats{
         margin: 10px;
     }
-
 }
-@media (max-width:1100px){
+@media (max-width:1250px){
     
      .left{
         position: relative;
-        top: 5px;
+        top: -25px;
+        margin-top: 0px;
         display: block;
         
     }
     .right{
         position: relative;
         display: block;
-        top: 15px;
+        top: -40px;
         left: 5px ;
     }
     
@@ -217,7 +221,7 @@ body{
     .slot{
         width: 100px;
         height: 130px;
-        font-size:80px ;
+        font-size:70px ;
     }
     @keyframes slotspin{
         0%{

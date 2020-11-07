@@ -1,7 +1,10 @@
 body{
-    background: url("https://pixabay.com/get/54e9d2474c56ae14f6d1867dda353678153bd9e75658724f_1920.jpg");
+    background: url("./alexander-kaunas-kTCZuDtYgzc-unsplash.jpg");
     text-align: center;
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
 }
 #inpSpeed{
     font-size: 20px;
@@ -51,8 +54,9 @@ h2{
     #menu{
         width: fit-content;
         padding: 10px;
+        margin: 10px;
         border: paleturquoise 3px solid;
-        background-color: #3B5249;
+        /* background-color: #3B5249; */
         border-radius: 10px;
         animation: welcomeanimation 1s 1;
         animation-fill-mode: forwards;
